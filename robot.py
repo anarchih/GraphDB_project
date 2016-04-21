@@ -62,7 +62,7 @@ def setCitiesDetail(city_list):
         print(city.cid)
         r = yield from aiohttp.request("GET", detail_base_url + str(city.cid), headers=req_header)
         r_text = yield from r.read()
-        soup = BeautifulSoup(r_text, 'lxml')
+        soup = BeautifulSoup(r_text)
         detail_url = soup.select("a")[0]['href']
         detail_data = getCityDetail(detail_url)
         city.set_detail(detail_data)
