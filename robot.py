@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from const import robot_id, detail_mapping
+from const import *
 import asyncio
 import aiohttp
 from itertools import tee, islice
